@@ -114,6 +114,6 @@ extern byte TCCR2A;  // Timer/Counter2 Control Register A
 extern byte TCCR2B;  // Timer/Counter2 Control Register A
 extern byte OCR2A;   // compare match every 10th milli-sec @20MHz
 extern byte TCNT2;   // clear timer2
+} // end namespace arduinoMock
 
 #endif /* __ARDUINO_TEST_DOUBLE_H_ */
-} // end namespace arduinoMock
