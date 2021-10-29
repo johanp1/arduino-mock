@@ -36,8 +36,6 @@ typedef enum{
 #define ISR(X) void interruptServiceRoutine(X)
 #define TIMER2_COMPA_vect void
 
-namespace arduino_stub
-{
 using byte = char;
 
 //singelton class
@@ -71,7 +69,7 @@ class ArduinoStub
    void IncTime(const unsigned long t);
    unsigned long GetTime();
 
-   void SetInterruptPin(const byte pin);
+   void SetInterruptPin(const int pin);
    void SetISR(void(*cbf)(void));
    void InvokeInterrupt(const unsigned int val);
 
@@ -114,6 +112,5 @@ extern byte TCCR2A;  // Timer/Counter2 Control Register A
 extern byte TCCR2B;  // Timer/Counter2 Control Register A
 extern byte OCR2A;   // compare match every 10th milli-sec @20MHz
 extern byte TCNT2;   // clear timer2
-} // end namespace arduinoMock
 
 #endif /* __ARDUINO_TEST_DOUBLE_H_ */

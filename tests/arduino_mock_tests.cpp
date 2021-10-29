@@ -2,8 +2,6 @@
 #include <iostream>
 #include <gtest/gtest.h>
 
-using namespace arduino_stub;
-
 std::shared_ptr<ArduinoStub> arduinoStub = ArduinoStub::GetInstance();
 
 void setup()
@@ -15,7 +13,6 @@ void setup()
 void teardown()
 {
 }
-
 
 TEST(ArduinoMockTestGroup, Init)
 {

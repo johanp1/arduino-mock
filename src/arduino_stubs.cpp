@@ -3,17 +3,15 @@
 #include <iostream>
 #include <string>
 
-using namespace arduino_stub;
-
-arduino_stub::byte TCCR1A = 0;  // Timer/Counter1 Control Register A
-arduino_stub::byte TCCR1B = 0;  // Timer/Counter1 Control Register B
+byte TCCR1A = 0;  // Timer/Counter1 Control Register A
+byte TCCR1B = 0;  // Timer/Counter1 Control Register B
 int TCNT1 = 0;   // Timer/Counter1
 
-arduino_stub::byte TIMSK2 = 0;  // enable overflow interrupt
-arduino_stub::byte TCCR2A = 0;  // Timer/Counter2 Control Register A
-arduino_stub::byte TCCR2B = 0;  // Timer/Counter2 Control Register A
-arduino_stub::byte OCR2A  = 0;  // compare match every 10th milli-sec @20MHz
-arduino_stub::byte TCNT2  = 0;  // clear timer2
+byte TIMSK2 = 0;  // enable overflow interrupt
+byte TCCR2A = 0;  // Timer/Counter2 Control Register A
+byte TCCR2B = 0;  // Timer/Counter2 Control Register A
+byte OCR2A  = 0;  // compare match every 10th milli-sec @20MHz
+byte TCNT2  = 0;  // clear timer2
 
 void noInterrupts(void)
 {
@@ -28,12 +26,12 @@ void delay(unsigned int val)
    (ArduinoStub::GetInstance())->IncTime(val);// .IncTime(val);
 }
 
-arduino_stub::byte digitalPinToInterrupt(arduino_stub::byte b)
+byte digitalPinToInterrupt(byte b)
 {
    return b;
 }
 
-void attachInterrupt(arduino_stub::byte pin, void(*cbf)(void), InterruptMode mode)
+void attachInterrupt(byte pin, void(*cbf)(void), InterruptMode mode)
 {
    (ArduinoStub::GetInstance())->SetInterruptPin(pin);
    (ArduinoStub::GetInstance())->SetISR(cbf);
@@ -41,27 +39,27 @@ void attachInterrupt(arduino_stub::byte pin, void(*cbf)(void), InterruptMode mod
    if(mode == 0){}
 }
 
-void arduino_stub::pinMode(int pin, int m)
+void pinMode(int pin, int m)
 {
    (ArduinoStub::GetInstance())->SetMode(pin, (PinMode)m);
 }
 
-int arduino_stub::digitalRead(int pin)
+int digitalRead(int pin)
 {
   return (ArduinoStub::GetInstance())->DigitalRead(pin);
 }
 
-void arduino_stub::digitalWrite(int pin, int w)
+void digitalWrite(int pin, int w)
 {
   (ArduinoStub::GetInstance())->DigitalWrite(pin, (PinState)w);
 }
 
-void arduino_stub::analogWrite(int pin, int w)
+void analogWrite(int pin, int w)
 {
   (ArduinoStub::GetInstance())->AnalogWrite(pin, w);
 }
 
-int arduino_stub::analogRead(int pin)
+int analogRead(int pin)
 {
   return (ArduinoStub::GetInstance())->AnalogRead(pin);
 }
@@ -188,7 +186,7 @@ unsigned long ArduinoStub::GetTime()
   return time;
 }
 
-void ArduinoStub::SetInterruptPin(arduino_stub::byte pin)
+void ArduinoStub::SetInterruptPin(const int pin)
 {
    interruptPin = pin;
 }
