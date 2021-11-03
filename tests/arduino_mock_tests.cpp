@@ -189,6 +189,19 @@ int main(int ac, char** av)
 }
 */
 
+TEST(ArduinoMockTestGroup, ArduinoStrinConcatTests)
+{
+  String s = String("apa");
+  
+  s.concat(1);
+  ASSERT_TRUE(s.compare("apa1") == 0);
+  s.concat("2");
+  ASSERT_TRUE(s.compare("apa12") == 0);
+  s.concat((byte)3);
+  ASSERT_TRUE(s.compare("apa123") == 0);
+}
+
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

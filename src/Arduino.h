@@ -36,7 +36,7 @@ typedef enum{
 #define ISR(X) void interruptServiceRoutine(X)
 #define TIMER2_COMPA_vect void
 
-using byte = char;
+using byte = int;
 
 //singelton class
 class ArduinoStub
