@@ -17,8 +17,6 @@ The project includes a set of unit tests that use the [GoogleTest](https://githu
 test framework.
 
 To build the unit tests, set `COMPILE_TESTS=ON` when calling CMake.
-
-### Pre-Installed CppUTest
 Use the steps below to build and run the test:
 
     mkdir build
