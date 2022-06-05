@@ -201,6 +201,15 @@ TEST(ArduinoMockTestGroup, ArduinoStrinConcatTests)
   ASSERT_TRUE(s.compare("apa123") == 0);
 }
 
+TEST(ArduinoMockTestGroup, ArduinoStrinEqOperatorTest)
+{
+   String lhs = String("apa");
+   String rhs1 = String("bepa");
+   String rhs2 = String("apa");
+
+   ASSERT_FALSE(lhs == rhs1);
+   ASSERT_TRUE(lhs == rhs2);
+}
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);

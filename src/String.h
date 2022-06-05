@@ -15,6 +15,8 @@ public:
    String(int _i);
    String(size_t size, char ch);
 
+   bool operator==(const String&) const;
+
    int indexOf(char ch);
 
    bool startsWith(String& _s);

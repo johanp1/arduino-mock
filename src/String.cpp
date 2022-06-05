@@ -42,6 +42,11 @@ String::String(size_t size, char ch)
    s = string(size, ch);
 }
 
+bool String::operator==(const String& rhs) const
+{
+   return (s.compare(rhs.s) == 0);
+}
+
 int String::indexOf(char ch)
 {
    return (int)s.find_first_of(ch);
