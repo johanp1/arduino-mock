@@ -35,8 +35,10 @@ public:
    int compare(void);
    int compareTo(String& _s);
    int compareTo(string& _s);
+   int compareTo(const char* _c);
    int length();
    String substring(int from);
+   String substring(int from, int to);
    char charAt(int n);
 
    string s;

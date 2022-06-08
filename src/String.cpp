@@ -128,6 +128,11 @@ int String::compareTo(string& _s)
   return s.compare(_s);
 }
 
+int String::compareTo(const char* _c)
+{
+  return s.compare(_c);
+}
+
 int String::length()
 {
    return (int)s.length();
@@ -136,6 +141,12 @@ int String::length()
 String String::substring(int from)
 {
    string str = s.substr(from);
+   return String(str);
+}
+
+String String::substring(int from, int to)
+{
+   string str = s.substr(from, to);
    return String(str);
 }
 
