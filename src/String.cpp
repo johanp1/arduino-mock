@@ -17,6 +17,18 @@ std::string to__string(int& value)
   return os.str() ;
 }
 
+std::string to__string(float& value)
+{
+  //create an output string stream
+  std::ostringstream os ;
+  
+  //throw the value into the string stream
+  os << value;
+  
+  //convert the string stream into a string and return
+  return os.str() ;
+}
+
 String::String(void)
 {
   s = string("");
@@ -91,6 +103,12 @@ void String::concat(unsigned int _i)
 {
 int i = (int)_i;
   s.append(to__string(i));
+}
+
+void String::concat(float _f)
+{
+float f = (float)_f;
+  s.append(to__string(f));
 }
 
 int String::compare(string& _s)

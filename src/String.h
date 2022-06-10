@@ -5,6 +5,7 @@
 
 using namespace std;
 string to__string(int& value);
+string to__string(float& value);
 
 class String
 {
@@ -28,6 +29,7 @@ public:
    void concat(const char ch);
    void concat(int _i);
    void concat(unsigned int _i);
+   void concat(float _f);
    int compare(string& _s);
    int compare(String& _s);
    int compare(String _s);

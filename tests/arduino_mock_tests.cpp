@@ -199,6 +199,9 @@ TEST(ArduinoMockTestGroup, ArduinoStrinConcatTests)
   ASSERT_TRUE(s.compare("apa12") == 0);
   s.concat((byte)3);
   ASSERT_TRUE(s.compare("apa123") == 0);
+  s.concat("_");
+  s.concat(3.14159f);
+  ASSERT_TRUE(s.compare("apa123_3.14159") == 0);
 }
 
 TEST(ArduinoMockTestGroup, ArduinoStrinEqOperatorTest)
