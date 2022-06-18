@@ -42,6 +42,7 @@ public:
    String substring(int from);
    String substring(int from, int to);
    char charAt(int n);
+   void setCharAt(int index, char c);
 
    string s;
 };

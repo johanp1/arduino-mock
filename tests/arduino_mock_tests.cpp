@@ -189,7 +189,7 @@ int main(int ac, char** av)
 }
 */
 
-TEST(ArduinoMockTestGroup, ArduinoStrinConcatTests)
+TEST(ArduinoMockTestGroup, ArduinoStringConcatTests)
 {
   String s = String("apa");
   
@@ -204,7 +204,7 @@ TEST(ArduinoMockTestGroup, ArduinoStrinConcatTests)
   ASSERT_TRUE(s.compare("apa123_3.14159") == 0);
 }
 
-TEST(ArduinoMockTestGroup, ArduinoStrinEqOperatorTest)
+TEST(ArduinoMockTestGroup, ArduinoStringEqOperatorTest)
 {
    String lhs = String("apa");
    String rhs1 = String("bepa");
@@ -212,6 +212,18 @@ TEST(ArduinoMockTestGroup, ArduinoStrinEqOperatorTest)
 
    ASSERT_FALSE(lhs == rhs1);
    ASSERT_TRUE(lhs == rhs2);
+}
+
+TEST(ArduinoMockTestGroup, ArduinoStringSetCharAtTest)
+{
+   String str = String("apa_bepa");
+   
+   str.setCharAt(3, '2');
+   ASSERT_TRUE(str.s.compare("apa2bepa") == 0);
+
+   str.setCharAt(str.s.length(), 'q'); // index > string size
+   ASSERT_TRUE(str.s.compare("apa2bepa") == 0);
+
 }
 
 int main(int argc, char **argv) {

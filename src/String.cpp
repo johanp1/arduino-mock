@@ -172,3 +172,11 @@ char String::charAt(int n)
 {
 	return s[n];
 }
+
+void String::setCharAt(int index, char c)
+{
+   if (index < s.length())
+   {
+      s[index] = c;
+   }
+}
