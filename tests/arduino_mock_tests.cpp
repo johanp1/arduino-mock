@@ -226,6 +226,24 @@ TEST(ArduinoMockTestGroup, ArduinoStringSetCharAtTest)
 
 }
 
+TEST(ArduinoMockTestGroup, ArduinoStringToIntTest)
+{
+   String str = String("54");
+   ASSERT_TRUE(str.toInt() == 54);
+
+   String str2 = String("invalid");
+   ASSERT_TRUE(str2.toInt() == 0);
+}
+
+TEST(ArduinoMockTestGroup, ArduinoStringToFlaotTest)
+{
+   String str = String("54.0");
+   ASSERT_TRUE(str.toFloat() == 54.0f);
+
+   String str2 = String("invalid");
+   ASSERT_TRUE(str2.toFloat() == 0);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

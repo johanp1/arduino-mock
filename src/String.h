@@ -43,6 +43,8 @@ public:
    String substring(int from, int to);
    char charAt(int n);
    void setCharAt(int index, char c);
+   long toInt();
+   float toFloat();
 
    string s;
 };
