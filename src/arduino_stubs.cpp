@@ -21,9 +21,10 @@ void interrupts(void)
 {
 }
 
-void delay(unsigned int val)
+//pause for ms milli-seconds
+void delay(unsigned int ms)
 {
-   (ArduinoStub::GetInstance())->IncTime(val);// .IncTime(val);
+   (ArduinoStub::GetInstance())->IncTimeMs(ms);
 }
 
 byte digitalPinToInterrupt(byte b)
@@ -171,11 +172,13 @@ void ArduinoStub::Reset()
    isr = NULL;
 }
 
+// micro seconds
 void ArduinoStub::IncTime(const unsigned long t)
 {
   time += t;
 }
 
+// milli seconds
 void ArduinoStub::IncTimeMs(const unsigned long t)
 {
   time += 1000*t;

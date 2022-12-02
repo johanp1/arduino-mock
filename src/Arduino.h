@@ -83,7 +83,7 @@ class ArduinoStub
    std::array<MockDigitalPin, 9> digitalPins;
    std::array<MockAnalogPin, 4> analogPins;
 
-   unsigned long time;
+   unsigned long time; // base time in micro sec
    void(*isr)(void);
    byte interruptPin;
 };

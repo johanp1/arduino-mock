@@ -244,6 +244,17 @@ TEST(ArduinoMockTestGroup, ArduinoStringToFlaotTest)
    ASSERT_TRUE(str2.toFloat() == 0);
 }
 
+TEST(ArduinoMockTestGroup, ArduinoTimeTest)
+{
+   ASSERT_TRUE(millis() == 0);
+   ASSERT_TRUE(micros() == 0);
+
+   delay(10); // 10 ms delay...
+
+   ASSERT_TRUE(millis() == 10);
+   ASSERT_TRUE(micros() == 10000);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
