@@ -180,3 +180,43 @@ void String::setCharAt(int index, char c)
       s[index] = c;
    }
 }
+
+long String::toInt()
+{
+  long retVal = 0;
+
+  try 
+  {
+    retVal = stoi(s);
+  }
+  catch (const std::out_of_range & e)
+  {
+    std::cout << e.what() << std::endl;
+  }
+  catch (const std::invalid_argument & e)
+  {
+    std::cout << e.what() << std::endl;
+  }
+
+  return retVal;
+}
+
+float String::toFloat()
+{
+  float retVal = 0.0f;
+
+  try 
+  {
+    retVal = stof(s);
+  }
+  catch (const std::out_of_range & e)
+  {
+    std::cout << e.what() << std::endl;
+  }
+  catch (const std::invalid_argument & e)
+  {
+    std::cout << e.what() << std::endl;
+  }
+
+  return retVal;
+}
