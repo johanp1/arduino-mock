@@ -103,6 +103,8 @@ int analogRead(int pin);
 unsigned long millis(void);
 unsigned long micros(void);
 
+void sei();
+void cli();
 extern byte TCCR1A;  // Timer/Counter1 Control Register A
 extern byte TCCR1B;  // Timer/Counter1 Control Register B
 extern int  TCNT1;   // Timer/Counter1

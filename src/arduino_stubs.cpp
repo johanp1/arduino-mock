@@ -75,6 +75,9 @@ unsigned long micros(void)
   return (unsigned long)(ArduinoStub::GetInstance())->GetTime();
 }
 
+void sei() {}
+void cli() {}
+
 ArduinoStub::ArduinoStub()
 {
    Reset();
