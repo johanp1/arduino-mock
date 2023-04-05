@@ -90,6 +90,7 @@ class ArduinoStub
 
 void setup();
 void loop();
+void serialEvent();
 void delay(unsigned int val);
 byte digitalPinToInterrupt(byte b);
 void attachInterrupt(byte pin, void(*cbf)(void), InterruptMode mode);
