@@ -33,8 +33,9 @@ typedef enum{
 #define OCIE2A 1
 #define WGM21 1
 
-#define ISR(X) interruptServiceRoutine(X)
-#define TIMER2_COMPA_vect void
+#define ISR(vector, ...)            \
+    extern "C" void vector (void); \
+    void vector (void)
 
 using byte = int;
 
@@ -90,7 +91,6 @@ class ArduinoStub
 
 void setup();
 void loop();
-int interruptServiceRoutine();
 void serialEvent();
 void delay(unsigned int val);
 byte digitalPinToInterrupt(byte b);

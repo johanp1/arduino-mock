@@ -5,7 +5,7 @@
 std::shared_ptr<ArduinoStub> arduinoStub = ArduinoStub::GetInstance();
 bool isrCalled = false;
 
-int interruptServiceRoutine()
+ISR(interruptServiceRoutine)
 {
    isrCalled = true;
 }
