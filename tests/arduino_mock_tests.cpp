@@ -5,7 +5,7 @@
 std::shared_ptr<ArduinoStub> arduinoStub = ArduinoStub::GetInstance();
 bool isrCalled = false;
 
-int ISR()
+int interruptServiceRoutine()
 {
    isrCalled = true;
 }
@@ -263,7 +263,7 @@ TEST(ArduinoMockTestGroup, ArduinoTimeTest)
 
 TEST(ArduinoMockTestGroup, ArduinoISR)
 {
-   ISR();
+   interruptServiceRoutine();
    ASSERT_TRUE(isrCalled);
 }
 
