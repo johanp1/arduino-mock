@@ -3,6 +3,12 @@
 #include <gtest/gtest.h>
 
 std::shared_ptr<ArduinoStub> arduinoStub = ArduinoStub::GetInstance();
+bool isrCalled = false;
+
+void ISR()
+{
+   isrCalled = true;
+}
 
 void setup()
 {  
@@ -253,6 +259,12 @@ TEST(ArduinoMockTestGroup, ArduinoTimeTest)
 
    ASSERT_TRUE(millis() == 10);
    ASSERT_TRUE(micros() == 10000);
+}
+
+TEST(ArduinoMockTestGroup, ArduinoISR)
+{
+   ISR();
+   ASSERT_TRUE(isrCalled);
 }
 
 int main(int argc, char **argv) {

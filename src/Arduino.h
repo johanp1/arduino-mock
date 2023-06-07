@@ -33,7 +33,7 @@ typedef enum{
 #define OCIE2A 1
 #define WGM21 1
 
-#define ISR(X) void interruptServiceRoutine(X)
+//#define ISR(X) void interruptServiceRoutine(X)
 #define TIMER2_COMPA_vect void
 
 using byte = int;
@@ -90,6 +90,7 @@ class ArduinoStub
 
 void setup();
 void loop();
+void ISR();
 void serialEvent();
 void delay(unsigned int val);
 byte digitalPinToInterrupt(byte b);
