@@ -197,7 +197,7 @@ void PinModeInputPullUp::SetState(MockDigitalPin *mockedPin, const PinState _sta
    if (_state == PinState_Low)
    {
       mockedPin->mockPinMode = std::make_unique<PinModeInput>(PinState_Low); //new PinModeInput(PinState_Low);
-      delete this;
+      //delete this;
    }
 }
 
