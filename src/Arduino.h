@@ -34,7 +34,7 @@ typedef enum{
 #define WGM21 1
 
 #define ISR(vector, ...)            \
-    extern "C" void vector (void); \
+    void vector (void); \
     void vector (void)
 
 using byte = int;
