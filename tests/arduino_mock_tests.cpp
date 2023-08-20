@@ -259,6 +259,11 @@ TEST(ArduinoMockTestGroup, ArduinoTimeTest)
 
    ASSERT_TRUE(millis() == 10);
    ASSERT_TRUE(micros() == 10000);
+
+   delayMicroseconds(1000); // 10 ms delay...
+
+   ASSERT_TRUE(millis() == 11);
+   ASSERT_TRUE(micros() == 11000);
 }
 
 TEST(ArduinoMockTestGroup, ArduinoISR)

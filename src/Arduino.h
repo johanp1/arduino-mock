@@ -93,6 +93,7 @@ void setup();
 void loop();
 void serialEvent();
 void delay(unsigned int val);
+void delayMicroseconds(unsigned int val);
 byte digitalPinToInterrupt(byte b);
 void attachInterrupt(byte pin, void(*cbf)(void), InterruptMode mode);
 void noInterrupts(void);

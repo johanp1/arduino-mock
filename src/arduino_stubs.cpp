@@ -27,6 +27,11 @@ void delay(unsigned int ms)
    (ArduinoStub::GetInstance())->IncTimeMs(ms);
 }
 
+void delayMicroseconds(unsigned int us)
+{
+   (ArduinoStub::GetInstance())->IncTime(us);
+}
+
 byte digitalPinToInterrupt(byte b)
 {
    return b;
