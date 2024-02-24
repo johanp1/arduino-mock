@@ -1,6 +1,7 @@
 #include "Arduino.h"
 #include <iostream>
 #include <gtest/gtest.h>
+#include <EEPROM.h>
 
 std::shared_ptr<ArduinoStub> arduinoStub = ArduinoStub::GetInstance();
 bool isrCalled = false;
@@ -188,12 +189,6 @@ TEST(ArduinoMockTestGroup, ArduinoAnalogPinOutOfBound)
    //CHECK_THROWS(out_of_range, analogRead(4));
 }
 
-/*
-int main(int ac, char** av)
-{
-    return CommandLineTestRunner::RunAllTests(ac, av);
-}
-*/
 
 TEST(ArduinoMockTestGroup, ArduinoStringConcatTests)
 {
@@ -266,10 +261,16 @@ TEST(ArduinoMockTestGroup, ArduinoTimeTest)
    ASSERT_TRUE(micros() == 11000);
 }
 
-TEST(ArduinoMockTestGroup, ArduinoISR)
+TEST(ArduinoMockTestGroup, ArduinoISRtest)
 {
    interruptServiceRoutine();
    ASSERT_TRUE(isrCalled);
+}
+
+TEST(ArduinoMockTestGroup, eepromWriteTest)
+{
+   EEPROM.write(0, 1);
+   ASSERT_TRUE(EEPROM[0] == 1);
 }
 
 int main(int argc, char **argv) {
