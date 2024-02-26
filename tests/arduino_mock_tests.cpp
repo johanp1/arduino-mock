@@ -15,6 +15,7 @@ void setup()
 {  
    Serial.clear();
    arduinoStub->Reset();
+   EEPROM.clear();
 }
    
 void teardown()
@@ -269,8 +270,17 @@ TEST(ArduinoMockTestGroup, ArduinoISRtest)
 
 TEST(ArduinoMockTestGroup, eepromWriteTest)
 {
+   ASSERT_TRUE(EEPROM[0] == 0);
    EEPROM.write(0, 1);
    ASSERT_TRUE(EEPROM[0] == 1);
+
+   ASSERT_TRUE(EEPROM[1] == 0);
+   EEPROM.write(1, 33);
+   ASSERT_TRUE(EEPROM.read(1) == 33);
+
+   ASSERT_TRUE(EEPROM[2] == 0);
+   EEPROM.update(2, 22);
+   ASSERT_TRUE(EEPROM[2] == 22);
 }
 
 int main(int argc, char **argv) {

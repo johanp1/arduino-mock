@@ -143,6 +143,14 @@ struct EEPROMClass{
         for( int count = sizeof(T) ; count ; --count, ++e )  (*e).update( *ptr++ );
         return t;
     }
+
+    void clear()
+    {
+         for (auto it = eeprom_bytes.begin(); it != eeprom_bytes.end(); ++it)
+         {
+            *it = 0;
+         }
+    }
 };
 
 static EEPROMClass EEPROM;
