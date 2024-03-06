@@ -281,6 +281,18 @@ TEST(ArduinoMockTestGroup, eepromWriteTest)
    ASSERT_TRUE(EEPROM[2] == 0);
    EEPROM.update(2, 22);
    ASSERT_TRUE(EEPROM[2] == 22);
+
+   float a = 1.1f;
+   float b = 2.2f;
+   float read_back = 0.0f;
+
+   EEPROM.put(0, a);
+   EEPROM.put(sizeof(a), b);
+
+   EEPROM.get(0, read_back);
+   ASSERT_FLOAT_EQ(read_back, 1.1);
+   EEPROM.get(sizeof(a), read_back);
+   ASSERT_FLOAT_EQ(read_back, 2.2);
 }
 
 int main(int argc, char **argv) {
