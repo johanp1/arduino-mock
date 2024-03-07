@@ -155,16 +155,16 @@ TEST(ArduinoMockTestGroup, ReadAnalogPinBasic)
    ASSERT_TRUE(testPin.AnalogRead() == 0);
 
    testPin.SetAnalogVoltage(5);
-   ASSERT_TRUE(testPin.AnalogRead() == 1023);
+   ASSERT_EQ(testPin.AnalogRead(), 1023);
 
    testPin.SetAnalogVoltage(0);
-   ASSERT_TRUE(testPin.AnalogRead() == 0);
+   ASSERT_EQ(testPin.AnalogRead(), 0);
 
    testPin.SetAnalogVoltage(1.2f);
-   ASSERT_TRUE(testPin.AnalogRead() ==  (unsigned int)(1023*1.2/5));
+   ASSERT_EQ(testPin.AnalogRead(), (unsigned int)(1023*1.2/5));
 
    testPin.SetAnalogVoltage(5.5f);
-   ASSERT_TRUE(testPin.AnalogRead() == 1023);
+   ASSERT_EQ(testPin.AnalogRead(), 1023);
 }
 
 TEST(ArduinoMockTestGroup, ReadAnalogPinReferenceResolution)
