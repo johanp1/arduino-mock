@@ -64,6 +64,7 @@ class ArduinoStub
    int DigitalRead(const int pin);
 
    void SetAnalogPinVoltage(const int pin, const float v);
+   void SetAnalogPinAdVal(const int pin, const unsigned int v);
    unsigned int AnalogRead(const int pin);
   
    void IncTimeMs(const unsigned long t);

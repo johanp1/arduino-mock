@@ -184,6 +184,12 @@ TEST(ArduinoMockTestGroup, ArduinoReadAnalogPin)
    ASSERT_TRUE(analogRead(0) == (unsigned int)(1023*2.5f/5));
 }
 
+TEST(ArduinoMockTestGroup, ArduinoReadAnalogPin2)
+{
+   arduinoStub->SetAnalogPinAdVal(0, 500);
+   ASSERT_EQ(analogRead(0), 500);
+}
+
 // check that nothing catastrophic happens if index outside of bounds
 TEST(ArduinoMockTestGroup, ArduinoAnalogPinOutOfBound)
 {

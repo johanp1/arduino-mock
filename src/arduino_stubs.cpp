@@ -162,6 +162,11 @@ void ArduinoStub::SetAnalogPinVoltage(const int pin, const float v)
   analogPins.at(pin).SetAnalogVoltage(v);
 }
 
+void ArduinoStub::SetAnalogPinAdVal(const int pin, const unsigned int v)
+{
+  analogPins.at(pin).SetAnalogAdVal(v);
+}
+
 unsigned int ArduinoStub::AnalogRead(const int pin)
 {
   return analogPins.at(pin).AnalogRead();
@@ -173,6 +178,11 @@ void ArduinoStub::Reset()
    {
       pin.DigitalWrite(PinState_Low);
       pin.SetMode(PinMode_Input);
+   }
+
+   for (auto& pin : analogPins)
+   {
+      pin.SetAnalogAdVal(0);
    }
 
    time = 0;
