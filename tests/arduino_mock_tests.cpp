@@ -2,6 +2,7 @@
 #include <iostream>
 #include <gtest/gtest.h>
 #include <EEPROM.h>
+#include "avr/wdt.h"
 
 std::shared_ptr<ArduinoStub> arduinoStub = ArduinoStub::GetInstance();
 bool isrCalled = false;
