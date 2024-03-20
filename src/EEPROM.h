@@ -148,7 +148,7 @@ struct EEPROMClass{
     {
          for (auto it = eeprom_bytes.begin(); it != eeprom_bytes.end(); ++it)
          {
-            *it = 0;
+            *it = 0xff;
          }
     }
 };
