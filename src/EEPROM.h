@@ -21,9 +21,7 @@
 #ifndef EEPROM_h
 #define EEPROM_h
 
-//#include <inttypes.h>
-//#include <avr/eeprom.h>
-//#include <avr/io.h>
+#include <array>
 
 /***
     EERef class.
@@ -33,7 +31,7 @@
     This class has an overhead of two bytes, similar to storing a pointer to an EEPROM cell.
 ***/
 
-std::array<uint8_t, 100> eeprom_bytes;
+extern std::array<uint8_t, 100>eeprom_bytes;
 
 struct EERef{
 
@@ -153,5 +151,5 @@ struct EEPROMClass{
     }
 };
 
-static EEPROMClass EEPROM;
+extern EEPROMClass EEPROM;
 #endif
