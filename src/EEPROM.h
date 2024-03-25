@@ -33,7 +33,7 @@
     This class has an overhead of two bytes, similar to storing a pointer to an EEPROM cell.
 ***/
 
-static std::array<uint8_t, 100> eeprom_bytes;
+std::array<uint8_t, 100> eeprom_bytes;
 
 struct EERef{
 
@@ -47,7 +47,7 @@ struct EERef{
     
     //Assignment/write members.
     EERef& operator=( const EERef &ref ) { return *this = *ref; }
-    EERef& operator=( uint8_t in )       { return eeprom_bytes[index] =( in ), *this;  }
+    EERef& operator=( uint8_t in )       { return eeprom_bytes[index] = ( in ), *this;  }
     EERef &operator +=( uint8_t in )     { return *this = **this + in; }
     EERef &operator -=( uint8_t in )     { return *this = **this - in; }
     EERef &operator *=( uint8_t in )     { return *this = **this * in; }

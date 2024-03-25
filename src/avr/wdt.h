@@ -17,5 +17,6 @@
 void wdt_reset() {};
 
 void wdt_enable(int time_out) {};
+void wdt_disable() {};
 
 #endif
