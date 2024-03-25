@@ -22,7 +22,7 @@
 #define EEPROM_h
 
 #include <array>
-
+#include <cstdint>
 /***
     EERef class.
     
