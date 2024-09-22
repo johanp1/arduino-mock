@@ -14,11 +14,11 @@ public:
    int read();
 
    void print(String& str);
-   void print(int val);
+   void print(int val, short decimals = 2);
    void print(const char* str);
 
    void println(String& str);
-   void println(int val);
+   void println(int val, short decimals = 2);
    void println(const char* str);
    
    void begin(int val);

@@ -60,8 +60,9 @@ void SerialStub::print(String& str)
    sendData.append(str.s);
 }
 
-void SerialStub::print(int val)
+void SerialStub::print(int val, short decimals)
 {
+   (void) decimals;
    string str = to__string(val);
 
    sendData.append(str);
@@ -81,8 +82,9 @@ void SerialStub::println(String& s)
    sendData.append(str);
 }
 
-void SerialStub::println(int val)
+void SerialStub::println(int val, short decimals)
 {
+   (void) decimals;
    string str = to__string(val).append("\n");
 
    sendData.append(str);
